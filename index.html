@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#101814">
+  <title>Zombie Survival</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="game-shell">
+    <canvas id="game"></canvas>
+    <section id="hud">
+      <div class="hud-group">
+        <div class="hud-pill">❤️ <span id="health">100</span></div>
+        <div class="hud-pill">🔫 <span id="ammo">∞</span></div>
+      </div>
+      <div class="hud-group">
+        <div class="hud-pill">🧟 <span id="kills">0</span></div>
+        <div class="hud-pill">🧭 <span id="coords">0, 0</span></div>
+      </div>
+    </section>
+    <div id="message">Explore o mapa e sobreviva.</div>
+
+    <!-- Os controles aparecem dinamicamente no ponto em que cada dedo toca a tela. -->
+    <div id="touch-layer">
+      <div id="move-base" class="stick-base hidden"><div class="stick-knob"></div></div>
+      <div id="aim-base" class="stick-base hidden"><div class="stick-knob"></div></div>
+    </div>
+
+    <div id="start-screen">
+      <div class="panel">
+        <div class="eyebrow">MUNDO ABERTO • PROTÓTIPO 02</div>
+        <h1>ZOMBIE<br><span>SURVIVAL</span></h1>
+        <p>Explore o território, encontre suprimentos e sobreviva aos zumbis.</p>
+        <button id="start">INICIAR JOGO</button>
+        <small>Celular: toque e arraste na metade esquerda para andar.<br>Na metade direita, toque e arraste para mirar e atirar.<br>Computador: WASD/setas + mouse.</small>
+      </div>
+    </div>
+
+    <div id="game-over" class="hidden">
+      <div class="panel">
+        <div class="eyebrow">FIM DE JOGO</div>
+        <h2>VOCÊ FOI<br><span>DERROTADO</span></h2>
+        <p>Zumbis eliminados: <strong id="final-kills">0</strong></p>
+        <button id="restart">TENTAR NOVAMENTE</button>
+      </div>
+    </div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
